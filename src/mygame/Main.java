@@ -5,10 +5,12 @@ import com.jme3.material.Material;
 import com.jme3.material.RenderState;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Geometry;
+import com.jme3.scene.Spatial;
 
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.ActionListener;
+import com.jme3.math.ColorRGBA;
 
 public class Main extends SimpleApplication {
 
@@ -28,7 +30,29 @@ public class Main extends SimpleApplication {
         tesseractGeom.setMaterial(matVC);
         rootNode.attachChild(tesseractGeom);
 
-        initInputKeys();
+        initInputKeys();        
+        
+        Spatial cone = assetManager.loadModel("Models/Cone/Cone.obj");
+        cone.setLocalTranslation(-5, 0, 0);
+        rootNode.attachChild(cone);
+        Material coneMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        coneMat.setColor("Color", ColorRGBA.Blue);
+        cone.setMaterial(coneMat);
+
+        
+        Spatial cylinder = assetManager.loadModel("Models/Cylinder/Cylinder.obj");
+        cylinder.setLocalTranslation(5, 0, 0);
+        rootNode.attachChild(cylinder);
+        Material cylinderMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        cylinderMat.setColor("Color", ColorRGBA.Green);
+        cylinder.setMaterial(cylinderMat);
+
+        Spatial torus = assetManager.loadModel("Models/Torus/Torus.obj");
+        torus.setLocalTranslation(0, -5, 0);
+        rootNode.attachChild(torus);
+        Material torusMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        torusMat.setColor("Color", ColorRGBA.Red);
+        torus.setMaterial(torusMat);
     }
 
     private void initInputKeys() {
