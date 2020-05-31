@@ -1,0 +1,4 @@
+#Sun May 31 19:17:31 EEST 2020
+base.0=D\:\\jTesseract\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
